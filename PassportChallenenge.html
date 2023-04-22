@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Microsoft Passport Challenge</title>
+</head>
+<body>
+
+    <h1>What are you in the mood for? </h1>
+    <h2>Demo JavaScript in Body</h2>
+    <br>
+    <form >
+        <input type="checkbox" id="cheapLabel" name="cheapMeal" value="cheap" onclick="show()">
+        <label for="cheapLabel"> Under $20</label><br>
+        <input type="checkbox" id="blackLabel" name="blackMeal" value="black" onclick="show()">
+        <label for="blackLabel"> Black Owned Restaurant</label><br>
+        <input type="checkbox" id="closeLabel" name="closeMeal" value="close" onclick="show()">
+        <label for="closeLabel"> Within 10 miles only</label><br><br>
+        <input type="submit" id= "submit" value="Clear">
+    </form>
+
+    <p id="cheap"></p>
+    <p id="black"></p>
+    <p id="close"></p>
+
+    <script>
+    let cheapRestaurants = ['Jack', "Subway"];
+    let blackOwned = ['Sara', "Mangoes"];
+    let withinFiveMiles = ['Peter', "Full"];
+
+    // multidimensional array
+    let allRestaurants = [cheapRestaurants, blackOwned, withinFiveMiles];
+
+    //document.getElementById("submit).onclick = function() {
+      //  var chosen = ('input[type=checkbox]:checked')
+        //const cheapR = document.querySelector('#cheapMeal');
+        //console.log(cheapR.checked)
+        //document.getElementById("demo").innerHTML = allRestaurants[0];
+    //}
+
+    function show() {
+     var checkbox1 = document.getElementById('cheapLabel');
+     var checkbox2 = document.getElementById('blackLabel');
+     var checkbox3 = document.getElementById('closeLabel');
+
+     if (checkbox1.checked == true){
+        document.getElementById("cheap").innerHTML = allRestaurants[0];
+     }
+     if (checkbox1.checked == false){
+        document.getElementById("cheap").innerHTML = "";
+     }
+     if (checkbox2.checked == true){
+        document.getElementById("black").innerHTML = allRestaurants[1];
+     }
+     if (checkbox2.checked == false){
+        document.getElementById("black").innerHTML = "";
+     }
+     if (checkbox3.checked == true){
+        document.getElementById("close").innerHTML = allRestaurants[2];
+     }
+     if (checkbox3.checked == false){
+        document.getElementById("close").innerHTML = "";
+     }
+    }
+    </script>
+
+</body>
+</html>
