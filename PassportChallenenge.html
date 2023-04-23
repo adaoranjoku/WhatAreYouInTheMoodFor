@@ -3,45 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>Microsoft Passport Challenge</title>
+    <style>
+        body {
+            background-color: LightSkyBlue;
+            text-align: center;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            font-family: Copperplate, Papyrus, fantasy;
+            font-size: 5em;
+        }
+        label {
+            font-family: verdana;
+            font-size: 1.5em;
+        }
+        input {
+            font-family: verdana;
+            font-size: 1em;
+        }
+        p {
+            font-family: verdana;
+            font-size: 2em;
+        }
+
+    </style>
 </head>
 <body>
 
     <h1>What are you in the mood for? </h1>
-    <h2>Demo JavaScript in Body</h2>
-    <br>
-    <form >
+    <form>
         <input type="checkbox" id="cheapLabel" name="cheapMeal" value="cheap" onclick="show()">
-        <label for="cheapLabel"> Under $20</label><br>
+        <label for="cheapLabel"> Under $10</label><br>
         <input type="checkbox" id="blackLabel" name="blackMeal" value="black" onclick="show()">
-        <label for="blackLabel"> Black Owned Restaurant</label><br>
+        <label for="blackLabel"> Black Owned </label><br>
         <input type="checkbox" id="closeLabel" name="closeMeal" value="close" onclick="show()">
-        <label for="closeLabel"> Within 10 miles only</label><br><br>
+        <label for="closeLabel"> Walking Distance</label><br>
+        <input type="checkbox" id="mexicanLabel" name="mexicanMeal" value="mexican" onclick="show()">
+        <label for="mexicanLabel"> Mexican</label><br>
+        <input type="checkbox" id="italianLabel" name="italianMeal" value="italian" onclick="show()">
+        <label for="italianLabel"> Italian</label><br>
+        <input type="checkbox" id="veganLabel" name="veganMeal" value="vegan" onclick="show()">
+        <label for="veganLabel"> Vegan</label><br>
+        <input type="checkbox" id="chineseLabel" name="chineseMeal" value="chinese" onclick="show()">
+        <label for="chineseLabel"> Chinese</label><br>
         <input type="submit" id= "submit" value="Clear">
     </form>
 
     <p id="cheap"></p>
     <p id="black"></p>
     <p id="close"></p>
+    <p id="mexican"></p>
+    <p id="italian"></p>
+    <p id="vegan"></p>
+    <p id="chinese"></p>
 
     <script>
-    let cheapRestaurants = ['Jack', "Subway"];
-    let blackOwned = ['Sara', "Mangoes"];
-    let withinFiveMiles = ['Peter', "Full"];
+    let cheapRestaurants = ["Jack", "Subway"];
+    let blackOwned = ["Paschal's Restaurant", "Slutty Vegan", "Hippin’ Hops Brewery & Oyster Bar", "Atlanta Breakfast Club", "The Beautiful Restaurant", "Twisted Soul Cookhouse & Pours", "Breakfast At Barney’s", "Virgil’s Gullah Kitchen & Bar", "Busy Bee Cafe", "Milk and Honey"];
+    let walkingDistance = ["Peter", "Full"];
+    let mexicanRest = ["Peter", "Full"];
+    let italianRest = ["Peter", "Full"];
+    let veganRest = ["Peter", "Full"];
+    let chineseRest = ["Peter", "Full"];
 
     // multidimensional array
-    let allRestaurants = [cheapRestaurants, blackOwned, withinFiveMiles];
-
-    //document.getElementById("submit).onclick = function() {
-      //  var chosen = ('input[type=checkbox]:checked')
-        //const cheapR = document.querySelector('#cheapMeal');
-        //console.log(cheapR.checked)
-        //document.getElementById("demo").innerHTML = allRestaurants[0];
-    //}
+    let allRestaurants = [cheapRestaurants, blackOwned, walkingDistance, mexicanRest, italianRest, veganRest, chineseRest];
 
     function show() {
      var checkbox1 = document.getElementById('cheapLabel');
      var checkbox2 = document.getElementById('blackLabel');
      var checkbox3 = document.getElementById('closeLabel');
+     var checkbox4 = document.getElementById('mexicanLabel');
+     var checkbox5 = document.getElementById('italianLabel');
+     var checkbox6 = document.getElementById('veganLabel');
+     var checkbox7 = document.getElementById('chineseLabel');
 
      if (checkbox1.checked == true){
         document.getElementById("cheap").innerHTML = allRestaurants[0];
@@ -60,6 +96,30 @@
      }
      if (checkbox3.checked == false){
         document.getElementById("close").innerHTML = "";
+     }
+     if (checkbox4.checked == true){
+        document.getElementById("mexican").innerHTML = allRestaurants[3];
+     }
+     if (checkbox4.checked == false){
+        document.getElementById("mexican").innerHTML = "";
+     }
+     if (checkbox5.checked == true){
+        document.getElementById("italian").innerHTML = allRestaurants[4];
+     }
+     if (checkbox5.checked == false){
+        document.getElementById("italian").innerHTML = "";
+     }
+     if (checkbox6.checked == true){
+        document.getElementById("vegan").innerHTML = allRestaurants[5];
+     }
+     if (checkbox6.checked == false){
+        document.getElementById("vegan").innerHTML = "";
+     }
+     if (checkbox7.checked == true){
+        document.getElementById("chinese").innerHTML = allRestaurants[6];
+     }
+     if (checkbox7.checked == false){
+        document.getElementById("chinese").innerHTML = "";
      }
     }
     </script>
